@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Matriks 2x2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        input[type="number"] {
+            width: 50px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Matriks 2x2</h1>
+    <table>
+        <tr>
+            <td><input type="number" id="a11" value="0"></td>
+            <td><input type="number" id="a12" value="0"></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="a21" value="0"></td>
+            <td><input type="number" id="a22" value="0"></td>
+        </tr>
+    </table>
+    <button onclick="calculate()">Hitung Determinan</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculate() {
+            const a11 = parseFloat(document.getElementById('a11').value);
+            const a12 = parseFloat(document.getElementById('a12').value);
+            const a21 = parseFloat(document.getElementById('a21').value);
+            const a22 = parseFloat(document.getElementById('a22').value);
+
+            const determinant = (a11 * a22) - (a12 * a21);
+
+            document.getElementById('result').innerText = `Determinan: ${determinant}`;
+        }
+    </script>
+</body>
+</html>
